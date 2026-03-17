@@ -165,6 +165,51 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
 
 @keyframes pop{0%{transform:scale(0.85);opacity:0}70%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
 .pop{animation:pop 0.25s ease;}
+
+/* SONG LINK */
+.song-link{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1D9E75,#3B8BD4);border-radius:var(--r);padding:14px 16px;margin-bottom:14px;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+.song-link:active{opacity:0.85;}
+.song-icon{font-size:28px;flex-shrink:0;}
+.song-info{flex:1;}
+.song-title{font-size:14px;font-weight:800;color:#fff;}
+.song-sub{font-size:12px;color:rgba(255,255,255,0.8);margin-top:2px;}
+.song-arr{font-size:18px;color:rgba(255,255,255,0.8);}
+
+/* WRITE SECTION */
+.write-card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;}
+.write-header{background:linear-gradient(135deg,var(--blue),#1D9E75);padding:12px 16px;}
+.write-header-title{font-family:'Fredoka One',cursive;font-size:17px;color:#fff;}
+.write-header-sub{font-size:12px;color:rgba(255,255,255,0.85);margin-top:2px;font-weight:600;}
+.write-row{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border);}
+.write-row:last-child{border-bottom:none;}
+.write-row:nth-child(even){background:var(--blue-light);}
+.write-emoji-col{font-size:36px;line-height:1;flex-shrink:0;width:44px;text-align:center;padding-top:4px;}
+.write-word-col{flex-shrink:0;width:80px;padding-top:4px;}
+.write-word{font-family:'Fredoka One',cursive;font-size:18px;color:var(--blue-dark);}
+.write-he{font-size:11px;color:var(--muted);font-weight:700;margin-top:2px;}
+.write-canvases{flex:1;display:flex;flex-direction:column;gap:6px;}
+.canvas-wrap{position:relative;height:44px;}
+.draw-canvas{width:100%;height:44px;border-radius:6px;background:#fff;border:1.5px solid #B5D4F4;display:block;touch-action:none;cursor:crosshair;}
+.clear-btn{position:absolute;top:3px;right:4px;background:rgba(180,180,180,0.25);border:none;border-radius:4px;font-size:11px;padding:2px 7px;cursor:pointer;color:var(--muted);line-height:1.5;-webkit-tap-highlight-color:transparent;}
+.clear-btn:active{background:rgba(180,180,180,0.5);}
+
+/* READ SECTION */
+.read-card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;}
+.read-header{padding:12px 16px;background:linear-gradient(135deg,#1D9E75,#085041);}
+.read-header-title{font-family:'Fredoka One',cursive;font-size:17px;color:#fff;}
+.read-header-sub{font-size:12px;color:rgba(255,255,255,0.85);margin-top:2px;font-weight:600;}
+.read-family{padding:8px 16px 0;}
+.read-family-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:8px;}
+.read-words{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px;}
+.read-word-card{border-radius:var(--rsm);padding:8px 4px;text-align:center;border:1.5px solid transparent;cursor:pointer;transition:all 0.15s;-webkit-tap-highlight-color:transparent;user-select:none;}
+.read-word-card:active{transform:scale(0.95);}
+.rw-emoji{font-size:22px;display:block;margin-bottom:3px;}
+.rw-word{font-family:'Fredoka One',cursive;font-size:17px;display:block;}
+.rw-he{font-size:10px;font-weight:700;display:block;margin-top:2px;}
+.rw-check{font-size:11px;font-weight:800;margin-top:4px;min-height:16px;display:block;}
+.read-word-card.done{opacity:0.65;}
+
+.cvc-tip{background:var(--teal-light);border-radius:var(--rsm);padding:12px 14px;margin:0 16px 14px;font-size:13px;font-weight:700;color:var(--teal-dark);line-height:1.7;}
 </style>
 </head>
 <body>
@@ -266,11 +311,51 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
       <div class="ltip">💡 טיפ: U קצר = אֶ מהבטן. Sun נשמע כמו "סאן" — האמצע הוא אֶ קצר!</div>
     </div>
     <div class="act-card">
-      <div class="act-title">🎯 פעילויות לשבוע 1</div>
+      <div class="act-title">🎯 פעילויות נוספות לשבוע 1</div>
       <div class="act-row"><span class="act-arr">→</span><span>I Spy בבית: "I spy something that starts with D!" (דלת, Dog...)</span></div>
-      <div class="act-row"><span class="act-arr">→</span><span>שיר ביחד: "Dan and Nan sit in the sun" — למצוא את D, N, U</span></div>
-      <div class="act-row"><span class="act-arr">→</span><span>ציור + כיתוב: כלב ← Dog, שמש ← Sun, אף ← Nose</span></div>
-      <div class="act-row"><span class="act-arr">→</span><span>מילים ראשונות לקריאה: nod, den, mud, sun, dun</span></div>
+      <div class="act-row"><span class="act-arr">→</span><span>שיר: "Dan and Nan sit in the sun" — למצוא את D, N, U</span></div>
+    </div>
+
+    <a class="song-link" href="https://www.youtube.com/watch?v=BELlZKpi1Zs" target="_blank">
+      <span class="song-icon">🎵</span>
+      <div class="song-info">
+        <div class="song-title">Jack Hartmann — Workout to the Letter Sounds</div>
+        <div class="song-sub">שיר עם תנועות לכל האותיות כולל D, N, U — ביוטיוב</div>
+      </div>
+      <span class="song-arr">↗</span>
+    </a>
+
+    <div class="write-card" id="wc1"></div>
+
+    <div class="read-card">
+      <div class="read-header">
+        <div class="read-header-title">📖 קרא/י מילים קצרות!</div>
+        <div class="read-header-sub">לחצ/י על כל מילה כשמצליחים לקרוא אותה ✓</div>
+      </div>
+      <div class="cvc-tip">💡 איך קוראים? <strong>cat</strong> = כְּ + אֶ + טְ → "cat"! צליל אחר צליל, ואז ביחד מהר.</div>
+      <div class="read-family">
+        <div class="read-family-label">משפחת -an (תנועה A = אֶ)</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🐱</span><span class="rw-word" style="color:#0C447C;">can</span><span class="rw-he" style="color:#3B8BD4;">פחית</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🍳</span><span class="rw-word" style="color:#0C447C;">pan</span><span class="rw-he" style="color:#3B8BD4;">מחבת</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🏃</span><span class="rw-word" style="color:#0C447C;">man</span><span class="rw-he" style="color:#3B8BD4;">גבר</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🚐</span><span class="rw-word" style="color:#0C447C;">van</span><span class="rw-he" style="color:#3B8BD4;">טנדר</span><span class="rw-check"></span></div>
+        </div>
+        <div class="read-family-label">משפחת -un ו-ud (תנועה U = אֶ קצר)</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">☀️</span><span class="rw-word" style="color:#085041;">sun</span><span class="rw-he" style="color:#1D9E75;">שמש</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🎉</span><span class="rw-word" style="color:#085041;">fun</span><span class="rw-he" style="color:#1D9E75;">כיף</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🏃</span><span class="rw-word" style="color:#085041;">run</span><span class="rw-he" style="color:#1D9E75;">לרוץ</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🪺</span><span class="rw-word" style="color:#085041;">den</span><span class="rw-he" style="color:#1D9E75;">מאורה</span><span class="rw-check"></span></div>
+        </div>
+        <div class="read-family-label">מילים מעורבות — D, N, U</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🙂</span><span class="rw-word" style="color:#633806;">nod</span><span class="rw-he" style="color:#BA7517;">להנהן</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🌊</span><span class="rw-word" style="color:#633806;">dun</span><span class="rw-he" style="color:#BA7517;">חום-אפור</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🪖</span><span class="rw-word" style="color:#633806;">mud</span><span class="rw-he" style="color:#BA7517;">בוץ</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🌰</span><span class="rw-word" style="color:#633806;">nut</span><span class="rw-he" style="color:#BA7517;">אגוז</span><span class="rw-check"></span></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -350,11 +435,53 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
       <div class="ltip">💡 טיפ: Yellow — היא כבר יודעת את המילה! עכשיו גם יודעת לקרוא אותה! 🌟</div>
     </div>
     <div class="act-card">
-      <div class="act-title">🎯 פעילויות לשבוע 2</div>
+      <div class="act-title">🎯 פעילויות נוספות לשבוע 2</div>
       <div class="act-row"><span class="act-arr">→</span><span>R: לתרגל rrr כמו מנוע, ואז — red! run! rabbit!</span></div>
       <div class="act-row"><span class="act-arr">→</span><span>W: שפתיים עגולות קודם — ואז wave! wind! wolf!</span></div>
       <div class="act-row"><span class="act-arr">→</span><span>Y: "Yellow, yellow, yellow!" — לשיר ולצבוע צהוב</span></div>
       <div class="act-row"><span class="act-arr">→</span><span>חידה: "צבע שמתחיל ב-Y, הוא כמו השמש" — (yellow!)</span></div>
+    </div>
+
+    <a class="song-link" href="https://www.youtube.com/watch?v=BELlZKpi1Zs" target="_blank">
+      <span class="song-icon">🎵</span>
+      <div class="song-info">
+        <div class="song-title">Jack Hartmann — Workout to the Letter Sounds</div>
+        <div class="song-sub">כולל R, W, Y — שיר עם תנועות ביוטיוב</div>
+      </div>
+      <span class="song-arr">↗</span>
+    </a>
+
+    <div class="write-card" id="wc2"></div>
+
+    <div class="read-card">
+      <div class="read-header">
+        <div class="read-header-title">📖 קרא/י מילים קצרות!</div>
+        <div class="read-header-sub">לחצ/י על כל מילה כשמצליחים לקרוא אותה ✓</div>
+      </div>
+      <div class="cvc-tip">💡 זוכרת? כְּ + אֶ + טְ = "cat"! עכשיו נסי עם R, W, Y בהתחלה.</div>
+      <div class="read-family">
+        <div class="read-family-label">משפחת -at ו-an — חזרה + R</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🐀</span><span class="rw-word" style="color:#0C447C;">rat</span><span class="rw-he" style="color:#3B8BD4;">חולדה</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🏃</span><span class="rw-word" style="color:#0C447C;">ran</span><span class="rw-he" style="color:#3B8BD4;">רץ</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🪖</span><span class="rw-word" style="color:#0C447C;">ram</span><span class="rw-he" style="color:#3B8BD4;">איל</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">💧</span><span class="rw-word" style="color:#0C447C;">wet</span><span class="rw-he" style="color:#3B8BD4;">רטוב</span><span class="rw-check"></span></div>
+        </div>
+        <div class="read-family-label">משפחת -ig ו-ip — עם R, W, Y</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🐷</span><span class="rw-word" style="color:#085041;">wig</span><span class="rw-he" style="color:#1D9E75;">פאה</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">✅</span><span class="rw-word" style="color:#085041;">yes</span><span class="rw-he" style="color:#1D9E75;">כן</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🌿</span><span class="rw-word" style="color:#085041;">yam</span><span class="rw-he" style="color:#1D9E75;">בטטה</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🐀</span><span class="rw-word" style="color:#085041;">rip</span><span class="rw-he" style="color:#1D9E75;">לקרוע</span><span class="rw-check"></span></div>
+        </div>
+        <div class="read-family-label">משפחת -un ו-ob — עם R, W</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🏃</span><span class="rw-word" style="color:#633806;">run</span><span class="rw-he" style="color:#BA7517;">לרוץ</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">✊</span><span class="rw-word" style="color:#633806;">won</span><span class="rw-he" style="color:#BA7517;">ניצח</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🕸️</span><span class="rw-word" style="color:#633806;">web</span><span class="rw-he" style="color:#BA7517;">רשת</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🪵</span><span class="rw-word" style="color:#633806;">rod</span><span class="rw-he" style="color:#BA7517;">מוט</span><span class="rw-check"></span></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -434,11 +561,53 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-
       <div class="ltip">💡 טיפ: Q תמיד עם U — הם לא נפרדים! Queen = "קְוּין"</div>
     </div>
     <div class="act-card">
-      <div class="act-title">🎯 פעילויות לשבוע 3</div>
+      <div class="act-title">🎯 פעילויות נוספות לשבוע 3</div>
       <div class="act-row"><span class="act-arr">→</span><span>J: לקפוץ כל פעם שמשמיעים מילת J — Jump! Jam! Jet!</span></div>
       <div class="act-row"><span class="act-arr">→</span><span>K: "King K is like Cat C!" — לצייר מלך שאוהב חתולים</span></div>
       <div class="act-row"><span class="act-arr">→</span><span>Q: "The Queen is Quick and Quiet" — לאמר בלחש!</span></div>
       <div class="act-row"><span class="act-arr">→</span><span>🎉 חגיגה: לכתוב את כל A–Z ביחד — שלמות!</span></div>
+    </div>
+
+    <a class="song-link" href="https://www.youtube.com/watch?v=BELlZKpi1Zs" target="_blank">
+      <span class="song-icon">🎵</span>
+      <div class="song-info">
+        <div class="song-title">Jack Hartmann — Workout to the Letter Sounds</div>
+        <div class="song-sub">כולל J, K, Q — שיר עם תנועות ביוטיוב</div>
+      </div>
+      <span class="song-arr">↗</span>
+    </a>
+
+    <div class="write-card" id="wc3"></div>
+
+    <div class="read-card">
+      <div class="read-header">
+        <div class="read-header-title">📖 קרא/י מילים קצרות!</div>
+        <div class="read-header-sub">לחצ/י על כל מילה כשמצליחים לקרוא אותה ✓</div>
+      </div>
+      <div class="cvc-tip">💡 כבר יודעת את כל האותיות! עכשיו נסי מילים עם J ו-K.</div>
+      <div class="read-family">
+        <div class="read-family-label">משפחת -am ו-et — עם J</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🍓</span><span class="rw-word" style="color:#0C447C;">jam</span><span class="rw-he" style="color:#3B8BD4;">ריבה</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">✈️</span><span class="rw-word" style="color:#0C447C;">jet</span><span class="rw-he" style="color:#3B8BD4;">סילון</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">😄</span><span class="rw-word" style="color:#0C447C;">jot</span><span class="rw-he" style="color:#3B8BD4;">לרשום</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E6F1FB;border-color:#B5D4F4;" onclick="toggleRead(this)"><span class="rw-emoji">🤸</span><span class="rw-word" style="color:#0C447C;">jig</span><span class="rw-he" style="color:#3B8BD4;">ריקוד</span><span class="rw-check"></span></div>
+        </div>
+        <div class="read-family-label">משפחת -it ו-id — עם K</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🧸</span><span class="rw-word" style="color:#085041;">kid</span><span class="rw-he" style="color:#1D9E75;">ילד/ה</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">☕</span><span class="rw-word" style="color:#085041;">kit</span><span class="rw-he" style="color:#1D9E75;">ערכה</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🔑</span><span class="rw-word" style="color:#085041;">ken</span><span class="rw-he" style="color:#1D9E75;">שם פרטי</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#E1F5EE;border-color:#9FE1CB;" onclick="toggleRead(this)"><span class="rw-emoji">🥫</span><span class="rw-word" style="color:#085041;">keg</span><span class="rw-he" style="color:#1D9E75;">חבית</span><span class="rw-check"></span></div>
+        </div>
+        <div class="read-family-label">חזרה כללית — כל האותיות!</div>
+        <div class="read-words">
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🐱</span><span class="rw-word" style="color:#633806;">cat</span><span class="rw-he" style="color:#BA7517;">חתול</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🐶</span><span class="rw-word" style="color:#633806;">dog</span><span class="rw-he" style="color:#BA7517;">כלב</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">☀️</span><span class="rw-word" style="color:#633806;">sun</span><span class="rw-he" style="color:#BA7517;">שמש</span><span class="rw-check"></span></div>
+          <div class="read-word-card" style="background:#FAEEDA;border-color:#FAC775;" onclick="toggleRead(this)"><span class="rw-emoji">🐓</span><span class="rw-word" style="color:#633806;">hen</span><span class="rw-he" style="color:#BA7517;">תרנגולת</span><span class="rw-check"></span></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -731,6 +900,163 @@ function renderEnd(){
 }
 
 startGame(1,document.querySelectorAll('.gpbtn')[0]);
+
+function toggleRead(el){
+  el.classList.toggle('done');
+  const chk=el.querySelector('.rw-check');
+  chk.textContent=el.classList.contains('done')?'✓ קראתי!':'';
+  chk.style.color=el.classList.contains('done')?'var(--teal)':'';
+}
+
+// ── CANVAS WRITING ──────────────────────────────────────────────────
+const WRITE_DATA = {
+  wc1: [
+    {e:'🐶', w:'Dog',   h:'כלב'},
+    {e:'🦆', w:'Duck',  h:'ברווז'},
+    {e:'👃', w:'Nose',  h:'אף'},
+    {e:'🪺', w:'Nest',  h:'קן'},
+    {e:'☀️', w:'Sun',   h:'שמש'},
+  ],
+  wc2: [
+    {e:'🌹', w:'Red',    h:'אדום'},
+    {e:'🌧️', w:'Rain',  h:'גשם'},
+    {e:'🌊', w:'Wave',   h:'גל'},
+    {e:'🟡', w:'Yellow', h:'צהוב'},
+    {e:'🐺', w:'Wolf',   h:'זאב'},
+  ],
+  wc3: [
+    {e:'🤸', w:'Jump',  h:'לקפוץ'},
+    {e:'🍓', w:'Jam',   h:'ריבה'},
+    {e:'👑', w:'King',  h:'מלך'},
+    {e:'🪁', w:'Kite',  h:'עפיפון'},
+    {e:'👸', w:'Queen', h:'מלכה'},
+  ],
+};
+
+function buildWriteCard(containerId, rows) {
+  const card = document.getElementById(containerId);
+  let html = `
+    <div class="write-header">
+      <div class="write-header-title">✏️ כתוב/י את המילה</div>
+      <div class="write-header-sub">כתב/י עם האצבע או החרט — שלוש פעמים לכל מילה</div>
+    </div>`;
+  rows.forEach((r, ri) => {
+    html += `<div class="write-row">
+      <div class="write-emoji-col">${r.e}</div>
+      <div class="write-word-col"><div class="write-word">${r.w}</div><div class="write-he">${r.h}</div></div>
+      <div class="write-canvases">`;
+    for (let i = 0; i < 3; i++) {
+      const cid = `${containerId}_r${ri}_c${i}`;
+      html += `<div class="canvas-wrap">
+        <canvas class="draw-canvas" id="${cid}" height="44"></canvas>
+        <button class="clear-btn" onclick="clearCanvas('${cid}')">מחק</button>
+      </div>`;
+    }
+    html += `</div></div>`;
+  });
+  card.innerHTML = html;
+
+  // Init all canvases in this card
+  card.querySelectorAll('.draw-canvas').forEach(c => initCanvas(c));
+}
+
+function initCanvas(canvas) {
+  // Set actual pixel size matching CSS size
+  const resize = () => {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width  = rect.width  * dpr;
+    canvas.height = rect.height * dpr;
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    drawGuides(ctx, rect.width, rect.height / dpr);
+  };
+
+  // Draw after a tick so layout is complete
+  requestAnimationFrame(resize);
+
+  let drawing = false;
+  let lastX = 0, lastY = 0;
+
+  function getPos(e, canvas) {
+    const rect = canvas.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return { x: src.clientX - rect.left, y: src.clientY - rect.top };
+  }
+
+  function start(e) {
+    e.preventDefault();
+    drawing = true;
+    const {x, y} = getPos(e, canvas);
+    lastX = x; lastY = y;
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(x, y, 1.2, 0, Math.PI * 2);
+    ctx.fillStyle = '#1a1a88';
+    ctx.fill();
+  }
+  function move(e) {
+    if (!drawing) return;
+    e.preventDefault();
+    const {x, y} = getPos(e, canvas);
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(x, y);
+    ctx.strokeStyle = '#1a1a88';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+    lastX = x; lastY = y;
+  }
+  function end(e) { drawing = false; }
+
+  canvas.addEventListener('mousedown',  start, {passive:false});
+  canvas.addEventListener('mousemove',  move,  {passive:false});
+  canvas.addEventListener('mouseup',    end);
+  canvas.addEventListener('mouseleave', end);
+  canvas.addEventListener('touchstart', start, {passive:false});
+  canvas.addEventListener('touchmove',  move,  {passive:false});
+  canvas.addEventListener('touchend',   end,   {passive:false});
+}
+
+function drawGuides(ctx, w, h) {
+  // bottom line
+  ctx.strokeStyle = '#B5D4F4';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(4, h - 4);
+  ctx.lineTo(w - 4, h - 4);
+  ctx.stroke();
+  // mid dashed line
+  ctx.setLineDash([4, 5]);
+  ctx.strokeStyle = '#daeeff';
+  ctx.beginPath();
+  ctx.moveTo(4, h / 2);
+  ctx.lineTo(w - 4, h / 2);
+  ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+function clearCanvas(id) {
+  const canvas = document.getElementById(id);
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.width / dpr;
+  const h = canvas.height / dpr;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawGuides(ctx, w, h);
+}
+
+// Build all write cards on load
+buildWriteCard('wc1', WRITE_DATA.wc1);
+buildWriteCard('wc2', WRITE_DATA.wc2);
+buildWriteCard('wc3', WRITE_DATA.wc3);
 </script>
+<footer style="text-align:center;padding:24px 16px 32px;border-top:1px solid var(--border);margin-top:8px;">
+  <p style="font-size:13px;font-weight:700;color:var(--muted);">כל הזכויות שמורות לנוגה חסיד</p>
+  <p style="font-size:12px;color:var(--muted);margin-top:4px;font-weight:600;">All Rights Reserved © Noga Hassid</p>
+</footer>
 </body>
 </html>
